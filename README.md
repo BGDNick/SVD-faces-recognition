@@ -40,3 +40,5 @@ rec.fit(train_path)
 img = matplotlib.pyplot.imread(test_image_path)
 
 rec.predict(img)
+
+### Additional usage examples may be found in Sample.ipynb
