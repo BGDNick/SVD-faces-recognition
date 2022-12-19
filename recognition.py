@@ -47,7 +47,7 @@ class SVDrecognition():
         self.names = imgs_names_full
         self.N = len(imgs_names_full)
         
-    def predict(self, img):
+    def predict(self, img, return_all=False):
         if len(img.shape) == 3:
             img = rgb2gray(img)
             
@@ -58,5 +58,15 @@ class SVDrecognition():
         epses = np.zeros(self.N)
         for i in range(self.N):
             epses[i] = sqrt((self.X.T[i] - img_vec)@(self.X.T[i] - img_vec))
+        if return_all:
+            return (epses, self.names[np.argmin(epses)])
         return (epses[np.argmin(epses)], self.names[np.argmin(epses)])
-
+    
+    def get_U(self):
+        return self.U.copy()
+    
+    def get_X(self):
+        return self.X.copy()
+    
+    def get_names(self):
+        return self.names.copy()
