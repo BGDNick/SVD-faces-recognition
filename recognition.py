@@ -20,7 +20,7 @@ class SVDrecognition():
     def __init__(self):
         None
         
-    def fit(self, train_path='./train'):
+    def fit(self, train_path='./train', num_vecs=10):
         imgs_names = [join(train_path, f) for f in listdir(train_path) if isfile(join(train_path, f))]
         imgs_names_full = []
         imgs = []
@@ -41,7 +41,8 @@ class SVDrecognition():
         imgs = np.array(imgs)
         self.imgs = imgs
         Vt = np.array(Vt)
-        self.U = np.array(U)
+        self.U = np.array(U)[:,:num_vecs]
+        print(self.U.shape)
         self.X = self.U.T @ imgs
         self.mean = mean
         self.names = imgs_names_full
