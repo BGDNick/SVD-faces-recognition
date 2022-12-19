@@ -20,7 +20,7 @@ class SVDrecognition():
     def __init__(self):
         None
         
-    def fit(self, train_path='./train', tresh1=15, tresh2=50):
+    def fit(self, train_path='./train'):
         imgs_names = [join(train_path, f) for f in listdir(train_path) if isfile(join(train_path, f))]
         imgs_names_full = []
         imgs = []
