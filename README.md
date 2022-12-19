@@ -5,15 +5,21 @@ This repo provides faces detection software based on SVD decomposition.
 # REQUIREMENTS:
 
 python-3 
+
 dask
+
 skimage
 
 # Tested on:
 
 Numpy 1.22.4
+
 Python 3.8.8
+
 Dask 2021.04.0
+
 Skimage 0.18.1
+
 Matplotlib 3.4.3
 
 # USAGE:
