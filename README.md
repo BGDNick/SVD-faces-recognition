@@ -38,4 +38,5 @@ rec.fit(train_path)
 
 ### Predicting the result for new image:
 img = matplotlib.pyplot.imread(test_image_path)
+
 rec.predict(img)
